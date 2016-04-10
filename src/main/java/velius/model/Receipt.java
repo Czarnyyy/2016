@@ -61,6 +61,8 @@ public class Receipt {
     @JoinColumn(name="owner_id")
     private User owner;
 
+    public Receipt(){};
+    
     public Receipt(byte[] image) throws IOException {
         this.image = image;
     }

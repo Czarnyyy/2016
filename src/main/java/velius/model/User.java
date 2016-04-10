@@ -6,6 +6,7 @@
 package velius.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -64,6 +65,7 @@ public class User {
     @JoinTable(name = "user_product", 
             joinColumns = @JoinColumn(name = "userID"), 
             inverseJoinColumns = @JoinColumn(name = "productID"))
+    @JsonManagedReference
     private List<Product> products;
     
     User(){}

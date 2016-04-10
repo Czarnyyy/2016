@@ -41,6 +41,7 @@ public class Product {
     
     @ManyToOne
     @JoinColumn(name="owner_id")
+    @JsonBackReference
     private User owner;
     
     @ManyToOne
@@ -61,11 +62,12 @@ public class Product {
         this.count = count;
     }
         
-    public Product(String productName, double price, double count, User owner) {
+    public Product(String productName, double price, double count, User owner, Receipt receipt) {
         this.productName = productName;
         this.price = price;
         this.count = count;
         this.owner = owner;
+        this.receipt = receipt;
     }
 
     public Long getId() {
